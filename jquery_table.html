@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul>
+        <h2>jQuery  bootstrap table</h2>
+
+        <p id="chinese">
+            策略根據拒絶，對於方法節省一切高級矛盾一大留言裝飾不必歲月組圖，公告再次這些是一種，用於聲音外貿本網面前發表一個為了啟動緩緩免費版一件儘管，年代昨天，三大手術一句話形勢業主榮譽分別全部，之間友情忽然眼神語言出現在線路心中，說是留下一看性能，實驗總部友情連。
+        </p>
+
+        <p id="english">
+            adipisci illo iusto nisi, at in blanditiis accusamus accusantium maxime non eos ad praesentium placeat quia.
+
+        </p>
+
+        <table style="width:100%">
+            <tr id="aaa">
+                <td>小明</td>
+                <td>小美</td>
+                <td>明美</td>
+            </tr>
+            <tr>
+                <td>珍珠奶茶</td>
+                <td>水果茶</td>
+                <td>拿鐵</td>
+            </tr>
+            <tr>
+                <td>雞排</td>
+                <td>義大利麵</td>
+                <td>披薩</td>
+            </tr>
+            <tr>
+                <td>薯條</td>
+                <td>沙拉</td>
+                <td>小餐包</td>
+            </tr>
+        </table>
+
+        <br>
+        <button id="redBtn">redBtn紅中文按鈕</button>
+        <button id="resetBtn">resetBtn還原按鈕</button>
+        <button id="greenBtn">greenBtn綠英文按鈕</button>
+
+
+    </ul>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        referrerpolicy="no-referrer"></script>
+    <script>
+        // 練習一
+        // table
+
+        $(document).ready(function () {
+
+            // $("#aaa td:even").css('color', 'blue');
+            // $("#aaa td:odd").css('color', 'red');
+            function removeALLClass(){
+
+                $("#chinese , #english").show();   
+                // $("#chinese").show();   
+                // $("#english").show();
+
+                $("button").removeClass("btn-danger btn-success");
+                // $("button").removeClass("btn-danger");
+                // $("button").removeClass("btn-success");
+
+                $("tr").removeClass("table-danger table-success");
+                // $("tr").removeClass("table-danger");
+                // $("tr").removeClass("table-success");
+
+                $("h2").removeClass("text-danger text-success");
+                $("h2").text("hello :))");
+
+
+            }
+
+            $('button').click(function(){
+                removeALLClass();
+            });
+
+            $("#redBtn").click(function () {    //按按鈕後
+                // $("#chinese").show();   //顯示中文
+                $("#english").hide();
+                // $("button").removeClass("btn-danger");
+                $("#redBtn").addClass("btn-danger"); //藍色中文按鈕
+                $("tr:nth-child(even)").addClass("table-danger");
+
+                $('h2').text("hello rtnBtn :))");
+                $('h2').addClass("text-danger");
+
+            });
+
+            $("#greenBtn").click(function () {
+                //程式碼
+                $("#chinese").hide();
+                // $("#english").show();
+
+                $("#greenBtn").addClass("btn-success");
+                $('tr:not(":has(th)"):even').addClass("table-success");
+                $('h2').text("hello greenBtn :))");
+                $('h2').addClass("text-success");
+            });
+
+
+
+
+        })
+
+    </script>
+
+
+</body>
+
+</html>

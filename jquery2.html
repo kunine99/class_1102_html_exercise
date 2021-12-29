@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <h1>jQuery no bootstrap</h1>
+
+        <p id="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum culpa minus laborum tenetur quis
+            adipisci illo iusto nisi, at in blanditiis accusamus accusantium maxime non eos ad praesentium placeat quia.
+        </p>
+
+        <p id="blue">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum culpa minus laborum tenetur quis
+            adipisci illo iusto nisi, at in blanditiis accusamus accusantium maxime non eos ad praesentium placeat quia.
+        </p>
+
+        <p id="red">策略根據拒絶，對於方法節省一切高級矛盾一大留言裝飾不必歲月組圖，公告再次這些是一種，用於聲音外貿本網面前發表一個為了啟動緩緩免費版一件儘管，年代昨天，三大手術一句話形勢業主榮譽分別全部，之間友情忽然眼神語言出現在線路心中，說是留下一看性能，實驗總部友情連。
+        </p>
+
+
+        <button id="hideBtn">hideBtn</button>
+        <button id="showBtn">showBtn</button>
+
+        <button id="toggleBtn">toggleBtn</button>
+
+    </ul>
+
+    <!-- Home-Librariesn搜尋jquery，直接copy script tag -->
+    <!-- 這段如果放在最下面，那hide就不會有效果  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        referrerpolicy="no-referrer"></script>
+    <!-- Home-Librariesn搜尋jquery，直接copy script tag    end-->
+
+
+
+    <script>
+        // 練習一
+        // table
+        // 奇數列會變成 粉色
+        // 奇數列會變成 黃色
+
+        //pinkBtn
+        //yellowBtn
+
+
+        // const content = document.getElementById("content");
+        // content.style.color = "red";
+
+        // 所有jQuery的code都要寫在$(document).ready(function (){}裡面!!!
+        $(document).ready(function () {
+            //$("#content").hide(); // 我希望這個按鈕按下去以後p 隱藏
+            // $("button").click(function () {
+
+            // });
+            $("#blue").css('color', 'blue');
+            $("#red").css('color', 'red');
+
+            $("#hideBtn").click(function () {
+                //程式碼.
+                // $("#green").hide();
+                // $("#yellow").hide();
+                $("#blue").hide();
+                $("#red").hide();
+            });
+
+            $("#showBtn").click(function () {
+                //程式碼
+                $("#blue").show();
+                $("#red").show();
+
+            });
+
+            $("p").click(function () {
+                //程式碼
+                $(this).hide();
+                //$this xxx
+                //$("this") xxx
+            });
+
+            $("#toggleBtn").click(function () {
+                //程式碼
+                $("#blue").toggle();
+                $("#red").toggle();
+            });
+
+        })
+
+    </script>
+    <!-- js開始寫 end -->
+</body>
+
+</html>
