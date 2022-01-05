@@ -45,6 +45,13 @@
                     perspiciatis qui
                     harum earum recusandae maiores! Optio, quae!</p>
 
+
+                <p id="hoverEvent">hoverEvent hoverEnter hoverOut Lorem ipsum dolor, sit amet consectetur adipisicing
+                    elit. In fugit
+                    corporis quam
+                    perspiciatis qui
+                    harum earum recusandae maiores! Optio, quae!</p>
+
             </div>
         </div>
         <div class="row">
@@ -61,6 +68,44 @@
                 <input type="text" name="" id="focusInput3">
             </div>
         </div>
+
+        <form action="" id="myForm">
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-12">
+                        <input type="text" name="myText" id="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <input type="text" name="myText" id="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <input type="text" name="myText" id="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <input type="text" name="myText" id="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <input type="text" name="myText" id="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <button type="submit">submit</button>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+
+        </form>
     </div>
 
     <!-- 先載入 -->
@@ -91,10 +136,13 @@
                     
                 });
 
-            // 點擊事件
-            // $('p').on('click', function () {
-            //     console.log('p click');
-            // });
+            $("#myForm").on('submit',function(e){
+                e.preventDefault();
+                console.log('hello myForm');
+
+                closeVa
+            });
+
 
             // 雙擊事件
             $('#dblclickP').on('dblclick', function () {
@@ -126,27 +174,6 @@
                 console.log('mouseout');
             });
 
-
-            // 滑鼠移入事件1
-            // $('#mouseEvent').on('mouseenter', function () {
-            //     console.log('mouseenter');
-            // });
-
-            // // 滑鼠移出事件2
-            // $('#mouseEvent').on('mouseout', function () {
-
-            // });
-
-            // // 滑鼠移出事件3
-            // $('#mouseEvent').on('mouseup', function () {
-
-            // });
-
-            // 合併
-            // $('#mouseEvent').on('mouseup', function () {
-
-            // });
-
             $("#mouseEvent").on({ //滑鼠第一次移到這裡
                 mouseenter: function () { 
                     $(this).css("background-color", "lightgray");
@@ -166,6 +193,17 @@
                     console.log('mouseup');
                 }
             });
+
+             // hover
+            // hover(fun1,fun2)
+            $('#hoverEvent').hover(
+                function () {
+                    $(this).css("background-color", "lightblue");
+                    console.log('hoverEnter');
+                }, function () {
+                    $(this).css("background-color", "pink");
+                    console.log('hoverOut');
+                });
 
         });
 

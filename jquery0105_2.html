@@ -12,24 +12,65 @@
 
 <body>
     <div class="container">
-        <div class="container">
-            <h2>金錢交易</h2>
-            <p>Create two form elements that appear side by side with .row and .col:</p>
-            <form action="/action_page.php">
-              <div class="row">
-                <div class="col-12">
-                  <input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
-                </div>
-                <br>
-                <br>
-                <div class="col-12">
-                  <input type="password" class="form-control" placeholder="Enter password" name="pswd">
-                </div>
-              </div>
-              <button type="submit" class="btn btn-primary mt-3">Submit</button>
-            </form>
-          </div>
-   
+        <div class="row">
+            <div class="col-12">
+                <h3>2022年 新年好禮 大優惠 點擊拿優惠</h3>
+                <p id="hoverEvent">hoverEvent hoverEnter hoverOut Lorem ipsum, doet consectetur adipisicing
+                    elit. Distinctio minus eaque ea quaerat explicabo in odio maiores nulla provident, laborum fuga
+                    expedita ullam minima tenetur vitae rem fugit voluptas. Tenetur sequi consequatur ex delectus
+                    voluptas! Magnam hic voluptates tempora saepe, doloribus facilis mollitia consequatur possimus sed
+                    inventore quae obcaecati nostrum voluptatibus vel porro velit. Ducimus officia fugiat odit nemo
+                    deserunt assumenda beatae, aut qui iste natus debitis adipisci maiores nam recusandae quo. Aut amet
+                    quae culpa numquam quaerat dolorum alias modi magni, saepe temporibus suscipit eos voluptates.
+                    Assumenda accusantium quos harum est perspiciatis quo alias beatae in, iure, soluta optio rem omnis
+                    doloribus labore fuga temporibus sint vero ducimus eius maxime. Ipsum fugiat, voluptates amet
+                    voluptatem dolor blanditiis nam ullam deserunt aperiam suscipit maiores facilis quod, non harum, ea
+                    dolorum voluptatum corporis quas dicta alias animi mollitia sed? Ut, magni consequuntur voluptate,
+                    fuga sit laudantium officiis laboriosam deserunt similique placeat eligendi libero molestias, fugit
+                    facere? Totam quod, esse fugit magnam dolor facilis, atque odit tenetur possimus optio enim?
+                    Recusandae quaerat, provident exercitationem, esse harum, cumque eveniet quis eos distinctio porro
+                    veniam quas possimus. Sequi reprehenderit dolor rerum, ut vitae illum assumenda, repellat dicta, hic
+                    quasi provident? Deleniti mollitia, iure numquam illo iusto, blanditiis non dicta enim at
+                    perspiciatis ducimus eaque corporis, delectus quisquam harum dolore exercitationem! Libero ipsam
+                    tempore, nulla ipsum magnam deleniti facere optio perferendis quas, sit ducimus iure excepturi
+                    repellendus quisquam necessitatibus. Dolorum quidem accusantium labore ducimus alias obcaecati, rem,
+                    voluptas fuga magni excepturi enim ipsa repellendus pariatur dolore, beatae assumenda consequuntur
+                    voluptatum sint porro officia. Repellat vero, sapiente est repellendus debitis nostrum blanditiis
+                    quam. Consequatur amet cum odit quam rem vero, delectus eligendi eius fugit, id deleniti corrupti
+                    voluptatum dignissimos molestiae natus dolores recusandae, dolor aliquid. Nulla vel porro eaque,
+                    consequatur rem unde doloribus sunt eius sapiente?</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2 mb-5">
+                <label for="myNumber">數量</label>
+            </div>
+            <div class="col-10 mb-5">
+                <input type="number" name="number" id="myNumber">
+            </div>
+
+            <div class="col-2 mb-5">
+                <label for="name">姓名</label>
+            </div>
+            <div class="col-10 mb-5">
+                <input type="text" name="name" id="name">
+            </div>
+
+            <div class="col-2 mb-5">
+                <label for="address">地址</label>
+            </div>
+            <div class="col-10 mb-5">
+                <input type="text" name="address" id="address">
+            </div>
+
+            <div class="col-12 mb-5">
+                <input type="hidden" name="price" id="priceHidden" value="500">
+            </div>
+
+            <div class="col-12 mb-5">
+                <button type="submit">submit</button>
+            </div>
+        </div>
     </div>
 
     <!-- 先載入 -->
@@ -44,101 +85,69 @@
         crossorigin="anonymous"></script>
 
     <!-- 先載入 end -->
-    
     <script>
-        $(document).ready(function () {
-            // $(function(){
-                // 如果同時兩個focus 兩個都會執行
-                // 最後顯示最下方focus
-                // $('#focusInput3').focus();
-                // $('#focusInput2').focus();
-                $('input').last().focus();  //最後一行會focus
-                
-                
-                //click:點了就會觸發的功能
-                $('button').click(function () {
-                    
-                });
 
-            // 點擊事件
-            // $('p').on('click', function () {
-            //     console.log('p click');
-            // });
+    $(document).ready(function () {
 
-            // 雙擊事件
-            $('#dblclickP').on('dblclick', function () {
-                console.log('p dblclick');
+        function discount() {
+            myNumberInput = parseInt($(this).val());
+            priceHidden = parseInt($("#priceHidden").val());
+            total = myNumberInput * priceHidden;
 
-            // 移除事件
-            $('p').off('click');
-            });
-
-            // 對焦事件
-            $('#focusInput').on('focus', function () {
-                console.log('focus 你點了row一次');
-            });
+            console.log("total", total);
+        }
 
 
-            // 一次性
-            $('#oneP').one('click', function () {
-                console.log('one click 只有一次性');
-            });
+        // $(function(){
+        // 如果同時兩個focus 兩個都會執行
+        // 最後顯示最下方focus
+        // $('#focusInput3').focus();
+        // $('#focusInput2').focus();
+        $('input').first().focus();
 
 
-            // 滑鼠移入事件
-            $('#mouseenterP').on('mouseenter', function () {
-                console.log('mouseenter');
-            });
-
-            // 滑鼠移出事件
-            $('#mouseoutP').on('mouseout', function () {
-                console.log('mouseout');
-            });
-
-
-            // 滑鼠移入事件1
-            // $('#mouseEvent').on('mouseenter', function () {
-            //     console.log('mouseenter');
-            // });
-
-            // // 滑鼠移出事件2
-            // $('#mouseEvent').on('mouseout', function () {
-
-            // });
-
-            // // 滑鼠移出事件3
-            // $('#mouseEvent').on('mouseup', function () {
-
-            // });
-
-            // 合併
-            // $('#mouseEvent').on('mouseup', function () {
-
-            // });
-
-            $("#mouseEvent").on({ //滑鼠第一次移到這裡
-                mouseenter: function () { 
-                    $(this).css("background-color", "lightgray");
-                    console.log('mouseout');
-
-                    // off 全部事件 
-                    // $('#mouseEvent').off();
-                    // off 單一事件
-                    $('#mouseEvent').off('mouseenter');
-                },
-                mouseout: function () { //滑鼠放開
-                    $(this).css("background-color", "blue");
-                    console.log('mouseup');
-                },
-                mouseup: function () {  //滑鼠點擊並還在字上面
-                    $(this).css("background-color", "yellow");
-                    console.log('mouseup');
-                }
-            });
+        $('button').click(function () {
 
         });
 
-    </script>
+        // 點擊事件           
+        // 一次性
+        $('h3').one('click', function () {
+            $(this).css("background-color", "lightblue");
+            $(this).css("color", "white");
+            $(this).text('新年優惠價 特價100元');
+            $("#priceHidden").val('100');
+            count = $('#hiddenPrice').val();
+            if(!isNaN(count)){
+                discount();
+            }
+            // console.log('one click');
+        });
+
+        // change
+        // blur
+        $('#myNumber').on('blur', function () {
+            myNumberInput = parseInt($(this).val());
+            priceHidden = parseInt($("#priceHidden").val());
+            total = myNumberInput * priceHidden;
+
+            console.log("total", total);
+        });
+
+        
+        // hover
+        // hover(fun1,fun2)
+        $('#hoverEvent').hover(
+            function () {
+                $(this).css("color", "red");
+                console.log('hoverEnter');
+            }, function () {
+                $(this).css("color", "black");
+                console.log('hoverOut');
+            });
+    });
+
+</script>
 
 
 </body>
