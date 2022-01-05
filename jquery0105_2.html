@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="container">
+            <h2>金錢交易</h2>
+            <p>Create two form elements that appear side by side with .row and .col:</p>
+            <form action="/action_page.php">
+              <div class="row">
+                <div class="col-12">
+                  <input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
+                </div>
+                <br>
+                <br>
+                <div class="col-12">
+                  <input type="password" class="form-control" placeholder="Enter password" name="pswd">
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary mt-3">Submit</button>
+            </form>
+          </div>
+   
+    </div>
+
+    <!-- 先載入 -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+        crossorigin="anonymous"></script>
+
+    <!-- 先載入 end -->
+    
+    <script>
+        $(document).ready(function () {
+            // $(function(){
+                // 如果同時兩個focus 兩個都會執行
+                // 最後顯示最下方focus
+                // $('#focusInput3').focus();
+                // $('#focusInput2').focus();
+                $('input').last().focus();  //最後一行會focus
+                
+                
+                //click:點了就會觸發的功能
+                $('button').click(function () {
+                    
+                });
+
+            // 點擊事件
+            // $('p').on('click', function () {
+            //     console.log('p click');
+            // });
+
+            // 雙擊事件
+            $('#dblclickP').on('dblclick', function () {
+                console.log('p dblclick');
+
+            // 移除事件
+            $('p').off('click');
+            });
+
+            // 對焦事件
+            $('#focusInput').on('focus', function () {
+                console.log('focus 你點了row一次');
+            });
+
+
+            // 一次性
+            $('#oneP').one('click', function () {
+                console.log('one click 只有一次性');
+            });
+
+
+            // 滑鼠移入事件
+            $('#mouseenterP').on('mouseenter', function () {
+                console.log('mouseenter');
+            });
+
+            // 滑鼠移出事件
+            $('#mouseoutP').on('mouseout', function () {
+                console.log('mouseout');
+            });
+
+
+            // 滑鼠移入事件1
+            // $('#mouseEvent').on('mouseenter', function () {
+            //     console.log('mouseenter');
+            // });
+
+            // // 滑鼠移出事件2
+            // $('#mouseEvent').on('mouseout', function () {
+
+            // });
+
+            // // 滑鼠移出事件3
+            // $('#mouseEvent').on('mouseup', function () {
+
+            // });
+
+            // 合併
+            // $('#mouseEvent').on('mouseup', function () {
+
+            // });
+
+            $("#mouseEvent").on({ //滑鼠第一次移到這裡
+                mouseenter: function () { 
+                    $(this).css("background-color", "lightgray");
+                    console.log('mouseout');
+
+                    // off 全部事件 
+                    // $('#mouseEvent').off();
+                    // off 單一事件
+                    $('#mouseEvent').off('mouseenter');
+                },
+                mouseout: function () { //滑鼠放開
+                    $(this).css("background-color", "blue");
+                    console.log('mouseup');
+                },
+                mouseup: function () {  //滑鼠點擊並還在字上面
+                    $(this).css("background-color", "yellow");
+                    console.log('mouseup');
+                }
+            });
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>
