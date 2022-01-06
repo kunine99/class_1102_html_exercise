@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <style>
+        span {
+            color: red;
+        }
+
+        /* 
+        div{
+            display: block;
+            border: 2px solid red;            
+            width: 80%;
+            padding:5px;
+            margin: 10px;
+        } */
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="div">
+                    <p>div p p p </p>
+                    <p>div p p p </p>
+                    <p>div p p p <span>span</span> </p>
+                    <p class="p3">div p p p </p>
+                    <p>div p p p </p>
+                    <p>div p p p <span>span</span> </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <button type="button">change</button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <!-- 先載入 -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+        crossorigin="anonymous"></script>
+    <!-- 先載入 END-->
+
+    <script>
+
+        $(document).ready(function () {
+            // Siblings
+            $("button").click(function () {
+                
+                // $('.p3').toggleClass('text-danger');
+
+                // 全部同層兄弟姊妹
+                // $('.p3').siblings().toggleClass('text-danger');
+
+                // 同層前一個
+                // $('.p3').prev().toggleClass('text-danger');
+
+                // // 同層前兩個
+                // $('.p3').prev().prev().toggleClass('text-danger');
+
+                // // 同層後一個
+                // $('.p3').next().toggleClass('text-danger');
+
+                // // 同層後二個
+                // $('.p3').next().next().toggleClass('text-danger');
+
+                // // 同層前面全部
+                // $('.p3').prevAll().toggleClass('text-danger');
+
+                // 同層後面全部
+                // nextAllData =   $('.p3').nextAll().first();
+                // console.log('nextAllData',nextAllData);
+                // $('.p3').nextAll().first().toggleClass('text-danger'); //這個因為有first所以只有p3變
+                // $('.p4').nextAll().toggleClass('text-danger'); //沒有first所以p3後面的全變
+
+                //closest p 找下一個
+                // closeetData =   $('.p3').closest('p');
+                // console.log(nextAllData);
+                // nextAllData.toggleClass('text-warning');
+
+                //closest span 會優先找下一個
+                closeetData =   $('span').closest('p');
+                console.log(closeetData);
+                closeetData.toggleClass('text-warning');
+
+            });
+
+
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>
+

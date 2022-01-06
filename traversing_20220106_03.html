@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <style>
+        span {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <h2>Card Image</h2>
+        <p>Image at the top (card-img-top):</p>
+        <div class="s55688">
+            <div class="card" style="width:400px">
+                <img class="card-img-top" src="https://fakeimg.pl/350x200/?text=Hello" alt="Card image"
+                    style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">1111</h4>
+                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                    <a href="#" class="btn btn-primary">See Profile</a>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <p>Image at the bottom (card-img-bottom):</p>
+        <div class="s55688">
+            <div class="card" style="width:400px">
+                <div class="card-body">
+                    <h4 class="card-title">2222</h4>
+                    <p class="card-text">Some example text some example text. Jane Doe is an architect and engineer</p>
+                    <a href="#" class="btn btn-primary">See Profile</a>
+                </div>
+                <img class="card-img-bottom" src="https://fakeimg.pl/350x200/?text=Hello" alt="Card image"
+                    style="width:100%">
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- 先載入 -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+        crossorigin="anonymous"></script>
+    <!-- 先載入 END-->
+
+    <script>
+
+        $(document).ready(function () {
+            // siblings
+            $("a").click(function () {
+                // siblings
+                // h4Data = $(this).siblings().filter('h4').text();
+
+                // parent 回上一層
+                // 找下面所有的h4
+                // h4Data = $(this).parent().find('h4').text();
+                // alert(h4Data+' parent');
+
+                // parent 回上一層
+                // h4Data = $(this).parent().find('h4').text();
+                // imgData = $(this).parent().siblings().filter('img').attr('src');
+                // imgDataNew = imgData + ' ' +h4Data;
+                // $(this).parent().siblings().filter('img').attr('src',imgDataNew);
+                // alert(imgData+' imgData');
+
+                // parents 回到最上層
+                // h4Data = $(this).parent().find('h4').text();
+                // imgData = $(this).parent().siblings().filter('img').attr('src');
+                // imgDataNew = imgData + ' ' +h4Data;
+                // $(this).parents().find('img').attr('src',imgDataNew);
+                // alert(imgData+' imgData');
+
+                // parentsUntil 回到.container
+                // h4Data = $(this).parent().find('h4').text();
+                // // imgData = $(this).parentsUntil('.card').find('img').attr('src');
+                // card = $(this).parentsUntil('.s55688');
+                // console.log('s55688',card);
+                // imgDataNew = imgData + h4Data + "card";
+                // $(this).parentsUntil('.s55688').find('img').attr('src', imgDataNew);
+                // alert(imgDataNew);
+
+
+
+
+                parent = $(this).parent();
+                console.log('parent', parent);
+
+                parents = $(this).parents();
+                console.log('parents', parents);
+
+                // 碰到.card 往前找一層
+                parentsUntil = $(this).parentsUntil('.card');
+                console.log('parentsUntil', parentsUntil);
+
+
+                // 碰到.s55688 往前找一層
+                parentsUntilS55688 = $(this).parentsUntil('.s55688');
+                console.log('parentsUntilS55688', parentsUntilS55688);
+            });
+        });
+
+
+
+
+
+        // });
+
+    </script>
+
+
+</body>
+
+</html>
