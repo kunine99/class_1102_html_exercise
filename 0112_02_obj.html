@@ -60,8 +60,8 @@
 
             // hoisting
             x = 100
-            console.log('x' , x);
-            
+            console.log('x', x);
+
             // js for
             myArr = [1, 3, 5, 7];
 
@@ -78,7 +78,7 @@
             // salary
             // bonus
             // project
-            const employeeData = [
+            const data = [
                 {
                     "id": 1,
                     "name": "amy",
@@ -104,33 +104,46 @@
                     "mobile": "0933-333-333",
                     "salary": 50000,
                     "bonus": 100000,
-                    "project": ['d', 'd']
+                    "project": ['d', 'e', 'f']
                 }
             ]
-            console.log('employeeData', employeeData);
+            console.log('data', data);
 
-            console.log(employeeData[0].name + '薪水是' + employeeData[0].salary);
-            console.log(employeeData[1].name + '薪水是' + employeeData[1].salary);
-            console.log(employeeData[2].name + '薪水是' + employeeData[2].salary);
+            console.log(data[0].name + '薪水是' + data[0].salary);
+            console.log(data[1].name + '薪水是' + data[1].salary);
+            console.log(data[2].name + '薪水是' + data[2].salary);
 
 
             // for
-            for (let i = 0; i < employeeData.length; i++) {
+            for (let i = 0; i < data.length; i++) {
                 // str = i + " is " + myArr[i];
 
+                projectLength = data[i].project.length
+
+                projectLengthString = "";
+                for (let j = 0; j < projectLength; j++) {
+                    projectLengthString = projectLengthString + ' ' + data[i].project[j];
+                }
+
+                data[i].bxp = data[i].bonus * data[i].project.length;
+                data[i].sum = data[i].salary + data[i].bxp;
+
+                dataString = `data[${i}] `;
+                console.log(dataString, data[i]);
+
+                console.log('projectLengthString', projectLengthString);
                 // code
                 tbodyString = `      
                  <tr>
-                    <td>${employeeData[i].id}</td>
-                    <td>${employeeData[i].name}</td>
-                    <td>${employeeData[i].salary}</td>
-                    <td>${employeeData[i].bonus}</td>
+                    <td>${data[i].id}</td>
+                    <td>${data[i].name}</td>
+                    <td>${data[i].salary}</td>
+                    <td>${data[i].bonus}</td>
                     <td>
-                        ${employeeData[i].project[0]}
-                        ${employeeData[i].project[1]}
+                        ${projectLengthString}
                     </td>
-                    <td>${employeeData[i].bonus * employeeData[i].project.length}</td>
-                    <td>${employeeData[i].bonus * employeeData[i].project.length + employeeData[i].salary}</td>
+                    <td>${data[i].bxp}</td>
+                    <td>${data[i].sum}</td>
                 </tr>
                  `;
 
@@ -139,8 +152,33 @@
                 // console.log(str);
             }
             // for end
+            console.log('data', data);
+
+            // Q 我這個月 會計 要發多少錢呢?
+            // 方法一
+            var total = 0;
+            for (let i = 0; i < data.length; i++) {
+                let tmp = data[i].sum;
+                total = tmp + total;
+            }
+            console.log('total', total);
+
+            // 方法二
+            totalArr = [
+                data[0].sum,
+                data[1].sum,
+                data[2].sum,
+            ];
+            total = totalArr.reduce(getSum, 0);
+
+            function getSum(total, num) {
+                return total + num;
+            }
+            console.log('total', total);
+
 
         });
+
 
     </script>
 
