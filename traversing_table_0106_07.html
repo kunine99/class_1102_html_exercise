@@ -78,6 +78,7 @@
 
             $(".addBtn").click(function () {
                 console.log('addBtn ok');
+                // 如果沒有true的話事件會不見
                 cloneData = $(this).parentsUntil('form').find('tbody').find('tr').last().clone(true);
                 // console.log($(this).parentsUntil('form').find('tbody').find('tr').last());
                 $(this).parentsUntil('form').find('tbody').find('tr').last().after(cloneData);
