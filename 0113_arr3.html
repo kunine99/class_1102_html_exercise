@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <style>
+        /* css 內 會用; */
+        span {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <h2>篩選器</h2>
+        <p>價格或數量 與 大於</p>
+        <div class="form-group">
+            <label for="sel1">Select list (select one):</label>
+            <select class="form-control" id="mySelect" name="sellist1">
+                <option value="price">price</option>
+                <option value="num">num</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="inputNum">InputNum:</label>
+            <input type="number" class="form-control" id="inputNum">
+        </div>
+        <button type="button" class="btn btn-primary" id="btn">button</button>
+    </div>
+    <div class="container">
+        <ul id="myUl">
+            <li>55688</li>
+            <li>55688</li>
+            <li>55688</li>
+            <li>55688</li>
+        </ul>
+    </div>
+
+
+
+    <!-- 先載入 -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+        crossorigin="anonymous"></script>
+    <!-- 先載入 END-->
+    <script src="./js/data.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            // obj a price 100    num 50
+            // obj b price 1000   num 500
+            // obj c price 10000  num 5000
+            // obj d price 10000  num 0
+            //方法二            
+            //filter ?
+            $('#btn').on('click', function () {
+                console.log('btn ok');
+
+                console.log('data',data);
+                // select ?
+                // selectOptionValue = $('#mySelect').val();
+                // console.log('selectOptionValue',selectOptionValue);
+                
+                // inputNumValue = parseInt($('#inputNum').val());
+                // console.log('inputNumValue',inputNumValue);
+
+                selectOptionValue = "地區別";
+                inputNumValue = "北部"
+                
+                filterArr = data.filter(value => value[`${selectOptionValue}`] == inputNumValue);
+                console.log('filterArr =>', filterArr);
+                // input ?
+
+            });
+
+            // filterArr = data.data(value => value.price > 6000);
+          
+            
+
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>
