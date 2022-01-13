@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <style>
+        /* css 內 會用; */
+        span {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <ul id="myUl">
+            <li>55688</li>
+            <li>55688</li>
+            <li>55688</li>
+            <li>55688</li>
+        </ul>
+    </div>
+
+
+
+    <!-- 先載入 -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+        crossorigin="anonymous"></script>
+    <!-- 先載入 END-->
+
+    <script>
+
+        $(document).ready(function () {
+            //    array [1,3,5,7,9]
+            //    obj {2,4,6,8,9}
+            //    typeof
+
+            const myArr = [1, 3, 5, 7, 9];
+
+            //single
+            console.log(myArr[0]);
+            console.log(myArr[1]);
+            console.log(myArr[2]);
+            console.log(myArr[3]);
+
+            //for ?
+            for (let i = 0; i < myArr.length; i++) {
+                console.log('index', i);
+                console.log(`myArr[${i}]`, myArr[i]);
+            }
+
+            //forEach?
+            str = "";
+
+            // function(){}
+            // ()=>{}
+
+            // function(value,key){}
+            // (value,key)=>{}
+
+            // function(value){}
+            // (value)=>{}
+            // value =>{}
+
+            //mapNewArr = myArr.map(value => value * 1000);
+
+            myArr.forEach(myArrValue => {
+                console.log('箭頭', myArrValue);
+            });
+
+            myArr.forEach((myArrValue, myArrIndex) => {
+                // console.log('forEach myArrValue => ', myArrValue);
+                // console.log('forEach myArrIndex => ', myArrIndex);
+                str += `<li>myArr[${myArrIndex}] => ${myArrValue}</li>`;
+                $('#myUl').html(str);
+            });
+
+            // myArr.forEach(function (myArrValue, myArrIndex) {
+            //     // console.log('forEach myArrValue => ', myArrValue);
+            //     // console.log('forEach myArrIndex => ', myArrIndex);
+            //     str += `<li>myArr[${myArrIndex}] => ${myArrValue}</li>`;
+            //     $('#myUl').html(str);
+            // });
+            // $('#myUl').append(str);
+
+
+            //[1,3,5,7,9] =>　[2 , 6 , 10, 14, 18] ?
+            //方法一
+            newArr = [];
+            myArr.forEach(function (value, key) {
+                newArr.push(value * 2);
+                str += `<li>myArr[${key}] x 2 => ${value * 2}</li>`;
+                $('#myUl').html(str);
+            });
+            console.log('newArr', newArr);
+
+            //[1,3,5,7,9] =>　[2 , 6 , 10, 14, 18] ?
+            //方法二
+            //泰山職訓獎學金 100個月
+            // mapNewArr = myArr.map(value => value * 100);
+            // 
+            // mapNewArr = myArr.map(function (value) { return value * 100; });
+
+
+            //長榮年終 40個月
+            mapNewArr = myArr.map(function (value) {
+                //[1,3,5,7,9] => [1,3,5,5,5] x 40
+                if (value > 5) {
+                    return value * 40;
+                } else {
+                    return value * 400;
+                }
+            });
+            console.log('map 後 myArr', myArr);
+            console.log('map 後 mapNewArr', mapNewArr);
+
+
+            console.log('forEach 後 myArr =>', myArr);
+
+            const myObj = {
+                '0': 2,
+                '1': 4,
+                '2': 6,
+                '3': 8
+            };
+
+            console.log('myArr', myArr);
+            console.log('myArr typeof', typeof (myArr));
+            console.log('myArr isArray', Array.isArray(myArr));
+
+
+            console.log('myObj', myObj);
+            console.log('myObj typeof', typeof (myObj));
+            console.log('myArr isArray', Array.isArray(myObj));
+
+
+            //[1,3,5,7,9] =>　[7,9] ?
+            console.log('========================');
+            //方法一
+            //forEach ?
+            newArr = [];
+            s55688 = myArr.forEach(function (value) {
+                if (value > 5) {
+                    newArr.push(value);
+                }
+            });
+            console.log('s55688', s55688);
+            console.log('newArr =>', newArr);
+            //方法二            
+            //filter ?
+            filterArr = myArr.filter(value => value < 5);
+
+            // filterArr = myArr.filter(function (value) {
+            //     return value < 5;
+            // });
+
+            // 練習一
+            //[1,3,5,7,9] =>　[1,5,7] ?
+            filterArr = myArr.filter((value, index) => (index % 2 == 0));
+
+            console.log('filterArr =>', filterArr);
+
+
+            // [1,3,5,7,9] => 第一個 大於5的數字
+            findArr = myArr.find(value => (value > 5));
+            console.log('findArr =>', findArr);
+
+            // [1,3,5,7,9] => 全部 判斷array 是不是都小於10
+            // 1.forEach
+            // if(value > 10)
+            everyArr = myArr.every(value => (value < 10));
+            console.log('everyArr =>', everyArr);
+
+            someArr = myArr.some(value => (value < 10));
+
+            someArr = myArr.some(value => (value < 10));
+
+            console.log('someArr =>', everyArr);
+
+            // [1,3,5,7,9]
+            // 
+            const reduceArr = myArr.reduce((total, value) => {
+                return total + value;
+            },500);
+            console.log('reduceArr ', reduceArr);
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>
