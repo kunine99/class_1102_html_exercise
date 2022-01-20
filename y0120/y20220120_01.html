@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <style>
+        /* css 內 會用; */
+        span {
+            color: red;
+        }
+
+        #pFade {
+            display: none;
+        }
+
+        .box {
+            background-color: lightblue;
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- show  / hide / toggle -->
+            <div class="col-12">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro eius itaque dicta architecto,
+                    sapiente aperiam sequi voluptatem fugit tempora nihil?</p>
+            </div>
+            <div class="col-4">
+                <button type="button" id="hideBtn">hide button</button>
+            </div>
+            <div class="col-4">
+                <button type="button" id="showBtn">show button</button>
+            </div>
+            <div class="col-4">
+                <button type="button" id="toggleBtn">toggle button</button>
+            </div>
+
+            <!-- fadeIn / fadeOut / fadeToggle / fadeOut -->
+            <div class="col-12">
+                <p id="pFade">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus distinctio incidunt nihil
+                    sapiente ab
+                    quaerat esse quasi sed animi atque. Adipisci optio recusandae tempore facilis dolor obcaecati vitae
+                    minima perferendis reprehenderit, sapiente accusantium. Unde omnis cum odio hic impedit quis quae
+                    non distinctio, consequuntur ex dignissimos libero quod, quo atque voluptatum inventore numquam
+                    velit repellat ad cumque eos quasi quos reiciendis nam? Officiis at aut dolor? Quae quia nemo
+                    praesentium deleniti id sapiente itaque. Nisi temporibus eaque nostrum. Consequatur est eum cum
+                    laborum labore deserunt delectus hic nostrum ab saepe, veritatis odio asperiores voluptas
+                    architecto, debitis quos, iure in accusamus.</p>
+            </div>
+            <div class="col-3">
+                <button type="button" id="fadeInBtn">fadeInBtn</button>
+            </div>
+            <div class="col-3">
+                <button type="button" id="fadeOutBtn">fadeOutBtn</button>
+            </div>
+            <div class="col-3">
+                <button type="button" id="fadeToggleBtn">fadeToggleBtn</button>
+            </div>
+            <div class="col-3">
+                <button type="button" id="fadeToBtn">fadeToBtn</button>
+            </div>
+
+            <!-- slide toggle -->
+            <ul>
+                <li>123</li>
+                <li>123</li>
+                <li>123</li>
+                <li>123</li>
+                <li>123</li>
+            </ul>
+
+
+
+
+        </div>
+    </div>
+
+    <!-- animate -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class='box'>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis a, dolor nihil veritatis cum
+                        in reprehenderit. Adipisci asperiores at mollitia.</p>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <button type="button" id="animateBtn">animateBtn</button>
+            </div>
+            <div class="col-3">
+                <button type="button" id="stopBtn">stopBtn</stopBtn>
+            </div>
+        </div>
+    </div>
+
+    <!-- callback -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <p id='callbackP'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit ut obcaecati
+                    officiis, cupiditate voluptatem totam dolorem aperiam quos repudiandae consectetur aut laudantium
+                    aspernatur eius illo corrupti nulla dolorum vero voluptate earum numquam impedit optio laborum in
+                    amet! Deserunt deleniti nihil hic minus incidunt omnis suscipit vel. Sequi sint distinctio culpa.
+                    Rerum consectetur totam labore ab iste, eaque a sit natus. In sit animi officia provident, quas
+                    incidunt eligendi nam, fuga veritatis veniam maxime? Eos praesentium nobis aperiam, veritatis nemo
+                    eaque voluptate perspiciatis eius autem? Adipisci unde magnam ipsa nemo odit? Eveniet laudantium
+                    fugit, consequuntur nesciunt dolorem quidem quaerat quam tempora.</p>
+            </div>
+            <div class="col-3">
+                <button type="button" id="callbackBtn">callbackBtn</stopBtn>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 先載入 -->
+    <!-- bs4 載入slim 缺少ajax與effects -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+        crossorigin="anonymous"></script>
+    <!-- 先載入 END-->
+
+    <script>
+
+        $(document).ready(function () {
+            // $('p').click(function () {
+            //     $('p').hide();
+            // });
+
+            $('#hideBtn').click(function () {
+                $('p').hide();
+            });
+
+            $('#showBtn').click(function () {
+                $('p').show();
+            });
+
+            $('#toggleBtn').click(function () {
+                $('p').toggle();
+            });
+
+            $('#fadeInBtn').click(function () {
+                // $('#pFade').fadeIn();
+                $('#pFade').fadeIn(2000);
+            });
+
+            $('#fadeOutBtn').click(function () {
+                // $('#pFade').fadeIn();
+                $('#pFade').fadeOut(2000);
+            });
+
+            $('#fadeToggleBtn').click(function () {
+                // $('#pFade').fadeIn();
+                $('#pFade').fadeToggle(2000);
+            });
+
+            $('#fadeToBtn').click(function () {
+                $('#pFade').fadeTo("slow", 0.5);
+            });
+
+            // slideToggle
+            $('ul').click(() => {
+                console.log('ul');
+                $('li').slideToggle();
+            });
+
+            // animate
+            $('#animateBtn').click(() => {
+                // css 屬性
+                // 時間
+                $('.box').animate(
+                    {
+                        width: "2000px",
+                        'font-size': '30px',
+                    }, 5000
+                );
+            });
+
+            $('#stopBtn').click(() => {
+                $('.box').stop();
+            });
+
+
+            // callback
+            // callbackBtn -> callbackP hide ->alert('hello callback')
+            // $('#callbackBtn').click(() => {
+            //     $('#callbackP').hide(3000);
+            //     alert('55688');
+            // });
+
+            // $('#callbackBtn').click(() => {
+            $('#callbackBtn').click(() => {
+                console.log();
+                $('#callbackP').hide('slow', () => {
+                    alert('55688');
+                });
+            });
+
+
+            // js 時間 js windows.滑鼠座標
+            console.log(new Date($.now()));
+
+            let nowDate = new Date();
+            console.log('nowDate', nowDate);
+            console.log('nowDate', nowDate.getHours());
+            console.log('nowDate', nowDate.getMinutes());
+            console.log('nowDate', nowDate.getSeconds());
+        });
+    </script>
+
+
+</body>
+
+</html>
