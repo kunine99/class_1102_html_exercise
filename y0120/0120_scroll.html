@@ -5,40 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>scroll</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <style>
-        /* css 內 會用; */
-        span {
-            color: red;
-        }
-
-        #scrollReport{
-            color: white;
-            background-color: black;
-            padding: 10px,10px;
-            border-radius: 4px;
-            opacity: .7;
-            position: fixed;
-            right: 15px;
-            bottom: 15px;
-            z-index: 1000;
-            font-size: 100px;
-            box-shadow: 0 4px 6px rgba(0,0,0,.5);
-        }
-    </style>
+    <link rel="stylesheet" href="../css/style.css">
 
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
         <!-- Brand/logo -->
         <a class="navbar-brand" href="#">Logo</a>
 
         <!-- Links -->
-        <ul class="navbar-nav">
+        <ul id="navbar" class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link" data-target="section1" href="#section1">Link 1</a>
             </li>
@@ -54,9 +35,21 @@
         </ul>
     </nav>
 
+<div class="jumbotron mb-0"> 
+    <div class="container py-5">
+        <h1 class="display-3">Scroll Spy</h1>
+        <p>滑動讀取位置</p>
+</div>
+</div>
+
     <section id='section1' class="bg-warning">
-        <div class="container-fluid">
+        <!-- <div class="container-fluid"> -->
+            <div class="container py-5">
             <h1>section 1</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit suscipit deserunt repellat
+                assumenda laudantium vel possimus itaque! Eveniet, doloremque in.</p>
+            <img src="https://picsum.photos/id/701/800/400" alt="" class="img-fluid" >
+            <p class="text-center">Image xxxxxxxx</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea error accusantium, ducimus reiciendis numquam
                 veritatis. Dolorum nulla aliquam veritatis, esse error tempora omnis veniam perspiciatis quis voluptatum
                 eligendi unde pariatur commodi rerum, eius beatae culpa distinctio voluptas possimus? Error odit
@@ -151,8 +144,12 @@
     </section>
 
     <section id='section2' class="bg-primary">
-        <div class="container-fluid">
+        <div class="container py-5">
             <h1>section 2</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit suscipit deserunt repellat
+                assumenda laudantium vel possimus itaque! Eveniet, doloremque in.</p>
+            <img src="https://picsum.photos/id/702/800/400" alt="">
+            <p class="text-center">Image xxxxxxxx</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea error accusantium, ducimus reiciendis numquam
                 veritatis. Dolorum nulla aliquam veritatis, esse error tempora omnis veniam perspiciatis quis voluptatum
                 eligendi unde pariatur commodi rerum, eius beatae culpa distinctio voluptas possimus? Error odit
@@ -247,8 +244,12 @@
     </section>
 
     <section id='section3' class="bg-success">
-        <div class="container-fluid">
+        <div class="container py-5">
             <h1>section 3</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit suscipit deserunt repellat
+                assumenda laudantium vel possimus itaque! Eveniet, doloremque in.</p>
+            <img src="https://picsum.photos/id/703/800/400" alt="">
+            <p class="text-center">Image xxxxxxxx</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea error accusantium, ducimus reiciendis numquam
                 veritatis. Dolorum nulla aliquam veritatis, esse error tempora omnis veniam perspiciatis quis voluptatum
                 eligendi unde pariatur commodi rerum, eius beatae culpa distinctio voluptas possimus? Error odit
@@ -343,8 +344,12 @@
     </section>
 
     <section id='section4' class="bg-info">
-        <div class="container-fluid">
+        <div class="container py-5">
             <h1>section 4</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit suscipit deserunt repellat
+                assumenda laudantium vel possimus itaque! Eveniet, doloremque in.</p>
+            <img src="https://picsum.photos/id/705/800/400" alt="">
+            <p class="text-center">Image xxxxxxxx</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea error accusantium, ducimus reiciendis numquam
                 veritatis. Dolorum nulla aliquam veritatis, esse error tempora omnis veniam perspiciatis quis voluptatum
                 eligendi unde pariatur commodi rerum, eius beatae culpa distinctio voluptas possimus? Error odit
@@ -459,40 +464,7 @@
         crossorigin="anonymous"></script>
     <!-- 先載入 END-->
 
-    <script>
-
-        $(document).ready(function () {
-            const navLinkList = document.querySelectorAll('.navbar .nav-link');
-            const navbar = document.getElementById('navbar')
-            const scrollReport = document.getElementById('scrollReport')
-
-            console.log(navLinkList,'navLinkList')
-            console.log(navbar,'navbar')
-            console.log(scrollReport,'scrollReport')
-
-            const navigationTable = {};
-            navLinkList.forEach(value => {
-                const sectionId = value.dataset.target;
-                navigationTable[sectionId] = {
-                    link: value,
-                    section: document.getElementById(sectionId)
-                }
-            });
-            console.log('navigationTable',navigationTable);
-
-            window.addEventListener('scroll',function(){
-                const y = Math.round(window.scrollY + navbar.offsetHeight);
-                scrollReport.innerText = `目前所在的位置${y}`;
-            });
-
-
-
-        });
-
-
-
-
-    </script>
+    <script src="../js/0120_main.js"></script>
 
 
 </body>

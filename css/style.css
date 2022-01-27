@@ -1,4 +1,39 @@
-*{
+/* *{
     padding: 0;
     margin: 0;
+} */
+
+.navbar {
+    box-shadow: 0 3px 3px rgb(251, 255, 0);
+}
+
+#scrollReport {
+/* color: seashell; */
+color: white;
+background-color: rgb(255, 0, 0);
+padding: 10px 10px;
+border-radius: 4px;
+opacity: .7;
+position: fixed;
+right: 15px;
+bottom: 15px;
+z-index: 100;
+/* font-size: 100px; */
+box-shadow: 0 4px 6px rgb(255, 255, 255);
+}
+
+#scrollReport:hover {
+    opacity: .8;
+}
+
+
+section .container {
+opacity: .3;
+transform: scale(.10);
+transition: all .5s ease-out;
+}
+
+section.is-active .container {
+    opacity: 1;
+    transform: scale(1);
 }
