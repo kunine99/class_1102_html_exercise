@@ -1,0 +1,161 @@
+<!-- 上午請假,這篇是10號同學友情分享的 要手動去weather.html動-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.css">
+
+
+
+<script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="text-center">天氣資料</h3>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <table id="table_id" class="table table-striped text-center">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>縣市</th>
+                    <th>時間一</th>
+                    <th>時間二</th>
+                    <th>時間三</th>
+                    <!-- <img src="./img/day/1.svg" class="img-fluid"> -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr>
+                    <td>1</td>
+                    <td>新北市</td>
+                    <td>陰短暫雨 16 19</td>
+                    <td>陰時多雲 16 17</td>
+                    <td>多雲時晴 16 24</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>新北市</td>
+                    <td>陰短暫雨 16 19</td>
+                    <td>陰時多雲 16 17</td>
+                    <td>多雲時晴 16 24</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>新北市</td>
+                    <td>陰短暫雨 16 19</td>
+                    <td>陰時多雲 16 17</td>
+                    <td>多雲時晴 16 24</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>新北市</td>
+                    <td>陰短暫雨 16 19</td>
+                    <td>陰時多雲 16 17</td>
+                    <td>多雲時晴 16 24</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>新北市</td>
+                    <td>陰短暫雨 16 19</td>
+                    <td>陰時多雲 16 17</td>
+                    <td>多雲時晴 16 24</td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <!-- 先載入 -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+        crossorigin="anonymous"></script>
+
+    <!-- datatable 要放在Bootstrap的下面-->
+    <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
+
+    <!-- 先載入 END-->
+    <!-- <script src="./js/data20220127.js"></script> -->
+    <script>
+
+        $(document).ready(function () {
+            $.ajax({
+                type: 'get',
+                url: 'https://opendata.cwb.gov.tw/fileapi/v1/opendataapi/F-C0032-001?Authorization=CWB-4A50A3B2-532D-42ED-9F80-6A742586DD94&downloadType=WEB&format=JSON',
+                dataType: 'json',
+                success: function (result) {
+                    data = result.cwbopendata.dataset.location;
+                    console.log('data', data);
+                    // console.log('data',result)  //先console.log這行看，就可理解上面兩行為何要這樣寫
+
+                    for (let i = 0; i < data.length; i++) {
+                        $('tbody').append(` 
+                    <tr>
+                        <td>${i+1}</td>
+                        <td>${data[1].locationName}</td>
+
+                        <td>
+                            ${data[1].weatherElement[0].time[0].parameter.parameterName}
+                            ${data[1].weatherElement[2].time[0].parameter.parameterName}-
+                            ${data[1].weatherElement[1].time[0].parameter.parameterName}
+                            &deg;C
+                            <img src="./img/day/${data[i].weatherElement[0].time[0].parameter.parameterValue}.svg" style="width:3rem ; alt="${data[i].weatherElement[0].time[0].parameter.parameterValue}.svg">
+                        </td>
+                        <td>
+                            ${data[1].weatherElement[0].time[1].parameter.parameterName}
+                            ${data[1].weatherElement[2].time[1].parameter.parameterName}-
+                            ${data[1].weatherElement[1].time[1].parameter.parameterName}
+                            &deg;C
+                            <img src="./img/day/${data[i].weatherElement[0].time[0].parameter.parameterValue}.svg" style="width:3rem ; alt="${data[i].weatherElement[0].time[0].parameter.parameterValue}.svg">
+                        </td>
+                        <td>
+                            ${data[1].weatherElement[0].time[1].parameter.parameterName}
+                            ${data[1].weatherElement[2].time[1].parameter.parameterName}-
+                            ${data[1].weatherElement[1].time[1].parameter.parameterName}
+                            &deg;C
+                            <img src="./img/day/${data[i].weatherElement[0].time[0].parameter.parameterValue}.svg" style="width:3rem ; alt="${data[i].weatherElement[0].time[0].parameter.parameterValue}.svg">
+                        </td>
+
+                    </tr>
+
+                    
+
+                    `)
+                        //使用append(增加資料在後面的語法)且把html的資料剪下來
+                        //data[1]為新北市 [0]為台北市，去json看就會知道
+                        //用陣列的邏輯去套
+                    }
+                }
+            });
+
+
+        });
+
+
+    </script>
+
+
+<script type="text/javascript">(function(){window['__CF$cv$params']={r:'6db30f594d2a56fb',m:'nEz_XWXI568x.1YcmZwloUwKmkFm_iJ4e0vcaFvJaks-1644472226-0-Afr6E1sPWuRrOzgYFDhyAowcA/Ce57nELtznCULWsbqdYA+Xic7ljsCqlrAM9GwtuQCUXQrErBK2T9DGMG6FGYSGbquc1KmRrKwYDr/fRqDFIxrZjYxd7k+w9x43VmdgyxcmpvyW3lxQLbD9ArWxDtXCXXWA310mYg/EXMF5ud2nQHd3qAU4RMntf9+aw+3cOEBcZanM/mZ6tWCeITFpNhY=',s:[0x072d80e02a,0x4941f1dd49],}})();</script></body>
+
+</html>
