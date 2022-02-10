@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.css">
+
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <button type="button" class="btn btn-primary" id="btn">button</button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <table id="table_id" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>area</th>
+                    <th>district</th>
+                    <th>name</th>
+                    <th>address</th>
+                    <th>tel</th>
+                    <th>web</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <!-- 先載入 -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+        crossorigin="anonymous"></script>
+
+    <!-- datatable -->
+    <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
+
+    <!-- 先載入 END-->
+    <script src="./js/data20220127.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            // console.log('Array.isArray(dataStore)', Array.isArray(dataStore));
+
+            newDataStore = [];
+            dataStore.forEach((value, key) => {
+                if(value.area=='北部'){
+                    newDataStore[key] = { id: value.id, area: '北部67890', district: value.district, name: value.name, address: value.address, tel: value.tel, web: value.web };
+                }else{
+                    newDataStore[key] = { id: value.id, area: value.area, district: value.district, name: value.name, address: value.address, tel: value.tel, web: value.web };
+                }
+            });
+            console.log('newDataStore', newDataStore);
+            console.log('ataStore', dataStore);
+
+            for (const key in dataStore) {
+                if (dataStore[key]['area'] == '北部') {
+                    dataStore[key]['area'] = '北部55688';
+                }
+            }
+
+            // dataStore.forEach(element => {
+
+            // });
+
+            // $('#table_id').DataTable();
+            // $('#table_id').DataTable();
+
+            $('#table_id').DataTable({
+                data: newDataStore,
+                columns: [
+                    { data: 'id' },
+                    { data: 'area' },
+                    { data: 'district' },
+                    { data: 'name' },
+                    { data: 'address' },
+                    { data: 'tel' },
+                    { data: 'web' }
+                ]
+            });
+
+            $('#btn').on('click', function () {
+                console.log('btn ok 0127');
+
+            });
+
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>

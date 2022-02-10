@@ -1,0 +1,31 @@
+.navbar {
+    box-shadow: 0 3px 3px rgba(0,0,0,.3)
+}
+
+#scrollReport {
+    color: white;
+    background: black;
+    padding: 10px 10px;
+    border-radius: 4px;
+    opacity: .7;
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    z-index: 100;
+    box-shadow: 0 4px 6px rgba(0,0,0,.5);
+}
+
+#scrollReport:hover {
+    opacity: .8;
+}
+
+section .container {
+    opacity: .3;
+    transform: scale(.8);
+    transition: all .5s ease-out;
+}
+
+section.is-active .container {
+    opacity: 1;
+    transform: scale(1);
+}
