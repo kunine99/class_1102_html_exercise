@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- slick.js 的github的head -->
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <!-- slick.js 的github的head END-->
+
+    <!-- slick.js 下載下來,裡面的index.html的style複製下來 -->
+    <style type="text/css">
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .slider {
+            width: 50%;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        .slick-slide {
+            margin: 0px 20px;
+        }
+
+        .slick-slide img {
+            width: 100%;
+        }
+
+        .slick-prev:before,
+        .slick-next:before {
+            color: rgb(241, 28, 28);
+        }
+
+
+        .slick-slide {
+            transition: all ease-in-out .3s;
+            opacity: .2;
+        }
+
+        .slick-active {
+            opacity: .5;
+        }
+
+        .slick-current {
+            opacity: 1;
+        }
+    </style>
+    <!-- slick.js 下載下來,裡面的index.html的style複製下來 END-->
+</head>
+
+<body>
+    <section class="vertical-center-4 slider">
+        <div>
+            <h3>1</h3>
+            <img src="http://fakeimg.pl/350x100?text=1">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div>
+            <h3>2</h3>
+            <img src="http://fakeimg.pl/350x100?text=2">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div>
+            <h3>3</h3>
+            <img src="http://fakeimg.pl/350x100?text=3">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div>
+            <h3>4</h3>
+            <img src="http://fakeimg.pl/350x100?text=4">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div>
+            <h3>5</h3>
+            <img src="http://fakeimg.pl/350x100?text=5">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div>
+            <h3>6</h3>
+            <img src="http://fakeimg.pl/350x100?text=6">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+    </section>
+
+
+    <!-- jq CDNJS搜尋JQ-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- jq CDNJS搜尋JQ END -->
+
+    <!-- slick.js 的github的body -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- slick.js 的github的body END-->
+
+    <script>
+        $(document).ready(function () {
+            // $('.your-class').slick();
+            $(".vertical-center-4").slick({
+                dots: true,
+                // vertical: true,
+                // centerMode: true,
+                slidesToShow: 4,
+                slidesToScroll: 2
+            });
+        })
+    </script>
+
+
+</body>
+
+</html>
