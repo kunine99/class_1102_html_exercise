@@ -12,9 +12,9 @@
 
 <body>
 
-    <!-- <form action="./getApi.php" id="myForm"> -->
+    <form action="./getApi.php" id="myForm">
     <!-- <form action="http://192.168.211.61/class_kai/y0224/getApi.php" id="myForm"> -->
-    <form action="http://localhost/class_kai/y0224/getApi.php" id="myForm">
+    <!-- <form action="http://localhost/class_kai/y0224/getApi.php" id="myForm"> -->
 
     </form>
 
@@ -52,7 +52,7 @@
             // console.log('myBtn');
             // var url = form.attr('action');
             // var url = 'https://data.ntpc.gov.tw/api/datasets/71CD1490-A2DF-4198-BEF1-318479775E8A/json?page=0&size=100';
-            
+           
             // var url = 'http://192.168.211.61/class_kai/y0224/getApi.php';
             // var url = 'http://localhost/class_kai/y0224/getApi.php';
             var url = './getApi.php';
