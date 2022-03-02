@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localstorage</title>
+</head>
+<body>
+    <p id="myText"></p>
+    <input type="text" name="myText2" id="myText2" data-save="keyText1">
+    <input type="text" name="myText3" id="myText3">
+
+    <script>
+        // localStorage.setItem('keyMyText','111');
+        // localStorage.setItem('keyMyText2','222');
+        // localStorage.setItem('keyMyText3','333');
+        item = localStorage.getItem('keyMyText','55688');
+        document.getElementById('myText').innerText = item;
+
+        item = localStorage.getItem('keyMyText2','55688');
+        document.getElementById('myText2').value = item;
+
+        item = localStorage.getItem('keyMyText3','55688');
+        document.getElementById('myText3').value = item;
+
+    </script>
+</body>
+</html>
